@@ -1,0 +1,23 @@
+{
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "(.*)", 
+        "dest": "app.py",  
+        "methods": ["GET", "POST"], 
+        "headers": {
+          "Cache-Control": "s-maxage=3600"  
+        }
+      },
+      {
+        "src": "/(.*)",
+        "dest": "app.py"
+      }
+    ]
+  }
+    
