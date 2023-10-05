@@ -2,8 +2,6 @@ from app import db,app
 from models import User, Veterinary, Services, Pets, PetItems
 from datetime import datetime
 
-# Function to seed the database
-
 def seed_database():
     with app.app_context():
         user1 = User(username='Micah', email='micah@gmail.com', password='Password1qsa', phonenumber='1234567890')
@@ -39,9 +37,9 @@ def seed_database():
         db.session.commit()
         
 if __name__ == '__main__':
-    with app.app_context():  # Create an application context
-        db.create_all()  # Create the tables if they don't exist
-        seed_database()  # Seed the database with your data
+    with app.app_context():  
+        db.create_all() 
+        seed_database()  
 
 
 
